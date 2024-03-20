@@ -18,7 +18,7 @@ return new class extends Migration
             $table->Integer('selling_price');
             $table->Integer('buyying_price');
             $table->bigInteger('product_type_id');
-            $table->enum('product_status', ['avialable','unavialable'])->default('active');
+            $table->enum('product_status', ['avialable','unavialable'])->default('avialable');
             $table->timestamps();
         });
     }

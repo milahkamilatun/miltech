@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigInteger('cashier_id');
             $table->string('product_name');
             $table->Date('datesell');
-            $table->enum('selling_status', ['delivery','not_delivery'])->default('active');
+            $table->enum('selling_status', ['delivery','not_delivery'])->default('delivery');
             $table->Integer('grand_total');
             $table->timestamps();
         });

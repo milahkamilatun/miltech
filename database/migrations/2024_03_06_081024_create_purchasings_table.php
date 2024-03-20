@@ -16,7 +16,7 @@ return new class extends Migration
             $table->bigInteger('vendor_id');
             $table->bigInteger('admin_id');
             $table->Date('date_purchase');
-            $table->enum('Purchase_status', ['delivery','not_delivery'])->default('active');
+            $table->enum('Purchase_status', ['delivery','not_delivery'])->default('delivery');
             $table->Integer('grand_total');
             $table->timestamps();
         });
