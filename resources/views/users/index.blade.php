@@ -16,7 +16,7 @@
                     <a href="{{ route('users.create') }}" class="btn btn-sm btn-secondary">
                         Tambah User
                     </a>
-                    <table class="table">
+                    <table class="table table-striped" id="users">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -59,4 +59,7 @@
         </div>
     </div>
 </div>
+<script>
+    new DataTable('#users');
+</script>
 @endsection

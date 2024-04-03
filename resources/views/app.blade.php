@@ -78,7 +78,7 @@
                             <a class="nav-link" href="{{ route('users.index') }}">User</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('ruangans.page') }}">Master Ruangan</a>
+                            <a class="nav-link" href="{{ route('producks.index') }}">Master Barang</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Booking Ruangan</a>

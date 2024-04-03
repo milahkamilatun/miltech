@@ -25,6 +25,7 @@ class RoleSeeder extends Seeder
         foreach ($this->roles as $role) {
             \App\Models\Role::create([
                 // "guid" => $role[0],
+                // "guid" => $role[0],
                 "role_name" => $role[1],
             ]);
         }

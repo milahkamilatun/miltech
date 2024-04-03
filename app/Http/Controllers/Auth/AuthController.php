@@ -85,7 +85,6 @@ class AuthController extends Controller
         'role_id' =>$data['role']
       ]);
     }
-
     public function logout(): RedirectResponse
     {
         Session::flush();
