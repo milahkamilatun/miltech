@@ -12,10 +12,19 @@
                 @endif
                 <div class="card-header">{{ __('Table Users') }}</div>
 
+                
                 <div class="card-body">
-                    <a href="{{ route('users.create') }}" class="btn btn-sm btn-secondary">
+                <form action="{{ route('user.import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="file" class="form-control">
+                <br>
+                <button class="btn btn-success">Import User Data</button>
+                <a class="btn btn-warning float-end" href="{{ route('user.export') }}">Export User Data</a>
+                <a href="{{ route('users.create') }}" class="btn btn-sm btn-secondary">
                         Tambah User
                     </a>
+            </form>
+                    
                     <table class="table table-striped" id="users">
                         <thead>
                             <tr>
@@ -37,7 +46,7 @@
                                 <td>{{$row->email}}</td>
                                 <td>{{$row->role->role_name}}</td>
                                 <td> 
-                                    <a href="{{ route('users.edit', $row->id) }}" class="btn btn-sm btn-warning">
+                                <a href="{{ route('users.edit',$row->id) }}" class="btn btn-sm btn-warning">
                                         Edit
                                     </a>
                                     <form action="{{ route('users.destroy',$row->id) }}" method="POST"
