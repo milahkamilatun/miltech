@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Charts\UsersByRoleChart;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -16,12 +17,12 @@ use Validator;
 
 class AuthController extends Controller
 {
-    public function dashboard()
+    public function dashboard(UsersByRoleChart $userChart)
     {
         if(Auth::check()){
-            return view('dashboard');
-        }
-
+            $user = User::count();
+            return view('dashboard', compact('user'),['chart' => $userChart->build()]);
+        } 
         return redirect("login")->withSuccess('Opps! You do not have access');
     }
 
